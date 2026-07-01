@@ -7,9 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\BuildingBlocks\BuildingBlocks.Identity.Abstractions\BuildingBlocks.Identity.Abstractions.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\GeekNotes.BuildingBlocks.Application\GeekNotes.BuildingBlocks.Application.csproj" />
-    <ProjectReference Include="..\GeekNotes.Modules.Users.Domain\GeekNotes.Modules.Users.Domain.csproj" />
+    <ProjectReference Include="..\GeekNotes.Modules.Identity.Domain\GeekNotes.Modules.Identity.Domain.csproj" />
   </ItemGroup>
 
 </Project>

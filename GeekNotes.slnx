@@ -4,6 +4,7 @@
     <Project Path="src/APIs/GeekNotes.API/GeekNotes.API.csproj" />
   </Folder>
   <Folder Name="/src/BuildingBlocks/">
+    <Project Path="src/BuildingBlocks/BuildingBlocks.Identity.Abstractions/BuildingBlocks.Identity.Abstractions.csproj" Id="a982d71d-ebef-4e80-9bcb-7d91df9970af" />
     <Project Path="src/BuildingBlocks/GeekNotes.BuildingBlocks.Application/GeekNotes.BuildingBlocks.Application.csproj" Id="d2c762fb-a87f-428b-b099-5e2eeb90ceca" />
     <Project Path="src/BuildingBlocks/GeekNotes.BuildingBlocks.Domain/GeekNotes.BuildingBlocks.Domain.csproj" Id="c8a9ea4b-417b-4723-8299-8923f52a1088" />
   </Folder>
@@ -11,13 +12,15 @@
   <Folder Name="/src/Modules/Articles/" />
   <Folder Name="/src/Modules/Categories/" />
   <Folder Name="/src/Modules/Identity/">
+    <Project Path="src/Modules/Identity/GeekNotes.Modules.Identity.Application/GeekNotes.Modules.Identity.Application.csproj" Id="61c586ad-1b95-476e-900a-808074d05e75" />
     <Project Path="src/Modules/Identity/GeekNotes.Modules.Identity.Domain/GeekNotes.Modules.Identity.Domain.csproj" Id="ec31d5d4-548f-4f73-bbc1-2f990f72fdfd" />
+    <Project Path="src/Modules/Identity/GeekNotes.Modules.Identity.Infrastructure/GeekNotes.Modules.Identity.Infrastructure.csproj" Id="95887f52-6ecf-46c5-971a-c4d2fe5be59d" />
   </Folder>
   <Folder Name="/src/Modules/Notify/" />
-  <Folder Name="/src/Modules/Roles/" />
   <Folder Name="/src/Modules/Users/">
     <Project Path="src/Modules/Users/GeekNotes.Modules.Users.Application/GeekNotes.Modules.Users.Application.csproj" Id="81a8637e-9186-40e7-8167-e36e585d6510" />
     <Project Path="src/Modules/Users/GeekNotes.Modules.Users.Domain/GeekNotes.Modules.Users.Domain.csproj" Id="18a73d47-f1d7-4808-b32f-227c87ace2bd" />
+    <Project Path="src/Modules/Users/GeekNotes.Modules.Users.Infrastructure/GeekNotes.Modules.Users.Infrastructure.csproj" Id="3db782e7-aa51-4aa9-8418-2408f954f90b" />
   </Folder>
   <Folder Name="/src/SharedKernel/">
     <Project Path="src/SharedKernel/GeekNotes.SharedKernel/GeekNotes.SharedKernel.csproj" Id="ee3469c1-a381-44c9-bffb-9f76a0b4a862" />
