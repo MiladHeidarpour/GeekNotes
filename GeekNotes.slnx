@@ -3,13 +3,25 @@
   <Folder Name="/src/APIs/">
     <Project Path="src/APIs/GeekNotes.API/GeekNotes.API.csproj" />
   </Folder>
+  <Folder Name="/src/BuildingBlocks/">
+    <Project Path="src/BuildingBlocks/GeekNotes.BuildingBlocks.Application/GeekNotes.BuildingBlocks.Application.csproj" Id="d2c762fb-a87f-428b-b099-5e2eeb90ceca" />
+    <Project Path="src/BuildingBlocks/GeekNotes.BuildingBlocks.Domain/GeekNotes.BuildingBlocks.Domain.csproj" Id="c8a9ea4b-417b-4723-8299-8923f52a1088" />
+  </Folder>
   <Folder Name="/src/Modules/" />
   <Folder Name="/src/Modules/Articles/" />
   <Folder Name="/src/Modules/Categories/" />
-  <Folder Name="/src/Modules/Identity/" />
+  <Folder Name="/src/Modules/Identity/">
+    <Project Path="src/Modules/Identity/GeekNotes.Modules.Identity.Domain/GeekNotes.Modules.Identity.Domain.csproj" Id="ec31d5d4-548f-4f73-bbc1-2f990f72fdfd" />
+  </Folder>
   <Folder Name="/src/Modules/Notify/" />
   <Folder Name="/src/Modules/Roles/" />
-  <Folder Name="/src/Modules/Users/" />
+  <Folder Name="/src/Modules/Users/">
+    <Project Path="src/Modules/Users/GeekNotes.Modules.Users.Application/GeekNotes.Modules.Users.Application.csproj" Id="81a8637e-9186-40e7-8167-e36e585d6510" />
+    <Project Path="src/Modules/Users/GeekNotes.Modules.Users.Domain/GeekNotes.Modules.Users.Domain.csproj" Id="18a73d47-f1d7-4808-b32f-227c87ace2bd" />
+  </Folder>
+  <Folder Name="/src/SharedKernel/">
+    <Project Path="src/SharedKernel/GeekNotes.SharedKernel/GeekNotes.SharedKernel.csproj" Id="ee3469c1-a381-44c9-bffb-9f76a0b4a862" />
+  </Folder>
   <Folder Name="/src/UIs/">
     <Project Path="src/UIs/GeekNotes.UI/GeekNotes.UI.csproj" />
   </Folder>
