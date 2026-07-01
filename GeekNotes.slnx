@@ -1,0 +1,16 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/APIs/">
+    <Project Path="src/APIs/GeekNotes.API/GeekNotes.API.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/" />
+  <Folder Name="/src/Modules/Articles/" />
+  <Folder Name="/src/Modules/Categories/" />
+  <Folder Name="/src/Modules/Identity/" />
+  <Folder Name="/src/Modules/Notify/" />
+  <Folder Name="/src/Modules/Roles/" />
+  <Folder Name="/src/Modules/Users/" />
+  <Folder Name="/src/UIs/">
+    <Project Path="src/UIs/GeekNotes.UI/GeekNotes.UI.csproj" />
+  </Folder>
+</Solution>
