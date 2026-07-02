@@ -10,11 +10,19 @@ public abstract class ValueObject<T> where T : ValueObject<T>
            obj.GetType() == GetType() &&
            GetEqualityComponents().SequenceEqual(valueObject.GetEqualityComponents());
 
-    public static bool operator ==(ValueObject<T> left, ValueObject<T> right)
-        => left.Equals(right);
+    public static bool operator ==(ValueObject<T>? left, ValueObject<T>? right)
+    {
+        if (left is null && right is null)
+            return true;
 
-    public static bool operator !=(ValueObject<T> left, ValueObject<T> right)
-        => !left.Equals(right);
+        if (left is null || right is null)
+            return false;
+
+        return left.Equals(right);
+    }
+
+    public static bool operator !=(ValueObject<T>? left, ValueObject<T>? right)
+        => !(left == right);
 
     public override int GetHashCode()
         => GetEqualityComponents()

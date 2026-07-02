@@ -41,19 +41,16 @@ public class Role : AggregateRoot<RoleId>
     {
         ArgumentNullException.ThrowIfNull(permissions);
 
-        var permissionList =
-            permissions
-                .Distinct()
-                .ToList();
+        var permissionList = permissions.Distinct().ToList();
 
         foreach (var permission in permissionList)
         {
-            if (!Permissions.Any(p => p.Equals(permission)))
-            {
-                throw new InvalidOperationException(
-                    $"Permission '{permission}' is not registered.");
-            }
+            if (!Roles.Permissions.All.Any(p => p.Equals(permission)))
+                throw new InvalidOperationException($"Permission '{permission}' is not registered.");
         }
+
+        _permissions.Clear();
+        _permissions.AddRange(permissionList);
     }
 
     public void GrantPermission(Permission permission)

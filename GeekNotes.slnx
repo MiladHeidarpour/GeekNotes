@@ -7,6 +7,7 @@
     <Project Path="src/BuildingBlocks/BuildingBlocks.Identity.Abstractions/BuildingBlocks.Identity.Abstractions.csproj" Id="a982d71d-ebef-4e80-9bcb-7d91df9970af" />
     <Project Path="src/BuildingBlocks/GeekNotes.BuildingBlocks.Application/GeekNotes.BuildingBlocks.Application.csproj" Id="d2c762fb-a87f-428b-b099-5e2eeb90ceca" />
     <Project Path="src/BuildingBlocks/GeekNotes.BuildingBlocks.Domain/GeekNotes.BuildingBlocks.Domain.csproj" Id="c8a9ea4b-417b-4723-8299-8923f52a1088" />
+    <Project Path="src/BuildingBlocks/GeekNotes.BuildingBlocks.Infrastructure/GeekNotes.BuildingBlocks.Infrastructure.csproj" Id="43cb7696-c6c4-4a16-afd3-e28c30a7b7cd" />
   </Folder>
   <Folder Name="/src/Modules/" />
   <Folder Name="/src/Modules/Articles/" />
