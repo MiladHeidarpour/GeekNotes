@@ -1,5 +1,7 @@
-﻿using GeekNotes.Modules.Identity.Infrastructure.Persistence;
+﻿using BuildingBlocks.Identity.Abstractions;
+using GeekNotes.Modules.Identity.Infrastructure.Persistence;
 using GeekNotes.Modules.Identity.Infrastructure.Persistence.Seed;
+using GeekNotes.Modules.Identity.Infrastructure.Persistence.Services;
 
 namespace GeekNotes.Modules.Identity.Infrastructure;
 
@@ -13,6 +15,7 @@ public static class DependencyInjection
         });
 
         services.AddScoped<IRoleRepository, RoleRepository>();
+        services.AddScoped<IRoleService, RoleService>();
         return services;
     }
 }

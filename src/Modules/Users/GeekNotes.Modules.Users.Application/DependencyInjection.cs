@@ -4,7 +4,7 @@ namespace GeekNotes.Modules.Users.Application;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection ConfigureApplicationLayer(this IServiceCollection services)
+    public static IServiceCollection AddUsersApplication(this IServiceCollection services)
     {
         services.AddMediatR(configure =>
         {

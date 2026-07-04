@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "GeekNotes.Modules.Users.Presentation": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:6338;http://localhost:6339"
+    }
+  }
+}

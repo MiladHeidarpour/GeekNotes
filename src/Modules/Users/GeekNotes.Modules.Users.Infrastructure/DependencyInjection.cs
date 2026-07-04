@@ -4,7 +4,7 @@ namespace GeekNotes.Modules.Users.Infrastructure;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection AddUserModule(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddUsersInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddDbContext<UserContext>(options =>
         {

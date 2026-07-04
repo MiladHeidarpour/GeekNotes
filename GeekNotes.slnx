@@ -20,8 +20,10 @@
   <Folder Name="/src/Modules/Notify/" />
   <Folder Name="/src/Modules/Users/">
     <Project Path="src/Modules/Users/GeekNotes.Modules.Users.Application/GeekNotes.Modules.Users.Application.csproj" Id="81a8637e-9186-40e7-8167-e36e585d6510" />
+    <Project Path="src/Modules/Users/GeekNotes.Modules.Users.Contracts/GeekNotes.Modules.Users.Contracts.csproj" Id="c6d57ebb-5b6c-4e47-92c2-6d2e88bc01c8" />
     <Project Path="src/Modules/Users/GeekNotes.Modules.Users.Domain/GeekNotes.Modules.Users.Domain.csproj" Id="18a73d47-f1d7-4808-b32f-227c87ace2bd" />
     <Project Path="src/Modules/Users/GeekNotes.Modules.Users.Infrastructure/GeekNotes.Modules.Users.Infrastructure.csproj" Id="3db782e7-aa51-4aa9-8418-2408f954f90b" />
+    <Project Path="src/Modules/Users/GeekNotes.Modules.Users.Presentation/GeekNotes.Modules.Users.Presentation.csproj" Id="91022d0a-1c0e-4382-98e4-b8ee6a0da207" />
   </Folder>
   <Folder Name="/src/SharedKernel/">
     <Project Path="src/SharedKernel/GeekNotes.SharedKernel/GeekNotes.SharedKernel.csproj" Id="ee3469c1-a381-44c9-bffb-9f76a0b4a862" />
