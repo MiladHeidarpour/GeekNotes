@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "GeekNotes.BuildingBlocks.Presentation": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:2743;http://localhost:2744"
+    }
+  }
+}

@@ -8,14 +8,17 @@
     <Project Path="src/BuildingBlocks/GeekNotes.BuildingBlocks.Application/GeekNotes.BuildingBlocks.Application.csproj" Id="d2c762fb-a87f-428b-b099-5e2eeb90ceca" />
     <Project Path="src/BuildingBlocks/GeekNotes.BuildingBlocks.Domain/GeekNotes.BuildingBlocks.Domain.csproj" Id="c8a9ea4b-417b-4723-8299-8923f52a1088" />
     <Project Path="src/BuildingBlocks/GeekNotes.BuildingBlocks.Infrastructure/GeekNotes.BuildingBlocks.Infrastructure.csproj" Id="43cb7696-c6c4-4a16-afd3-e28c30a7b7cd" />
+    <Project Path="src/BuildingBlocks/GeekNotes.BuildingBlocks.Presentation/GeekNotes.BuildingBlocks.Presentation.csproj" Id="fb0800ba-5927-41b0-99fa-60d320e1ce9e" />
   </Folder>
   <Folder Name="/src/Modules/" />
   <Folder Name="/src/Modules/Articles/" />
   <Folder Name="/src/Modules/Categories/" />
   <Folder Name="/src/Modules/Identity/">
     <Project Path="src/Modules/Identity/GeekNotes.Modules.Identity.Application/GeekNotes.Modules.Identity.Application.csproj" Id="61c586ad-1b95-476e-900a-808074d05e75" />
+    <Project Path="src/Modules/Identity/GeekNotes.Modules.Identity.Contracts/GeekNotes.Modules.Identity.Contracts.csproj" Id="70c1e1b3-0fa9-4d7a-850f-33e54e75c4b3" />
     <Project Path="src/Modules/Identity/GeekNotes.Modules.Identity.Domain/GeekNotes.Modules.Identity.Domain.csproj" Id="ec31d5d4-548f-4f73-bbc1-2f990f72fdfd" />
     <Project Path="src/Modules/Identity/GeekNotes.Modules.Identity.Infrastructure/GeekNotes.Modules.Identity.Infrastructure.csproj" Id="95887f52-6ecf-46c5-971a-c4d2fe5be59d" />
+    <Project Path="src/Modules/Identity/GeekNotes.Modules.Identity.Presentation/GeekNotes.Modules.Identity.Presentation.csproj" Id="efa58c26-60cb-4479-8316-fc9aa0081747" />
   </Folder>
   <Folder Name="/src/Modules/Notify/" />
   <Folder Name="/src/Modules/Users/">

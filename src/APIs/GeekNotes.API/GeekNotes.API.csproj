@@ -16,10 +16,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Modules\Identity\GeekNotes.Modules.Identity.Application\GeekNotes.Modules.Identity.Application.csproj" />
     <ProjectReference Include="..\..\Modules\Identity\GeekNotes.Modules.Identity.Infrastructure\GeekNotes.Modules.Identity.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Modules\Identity\GeekNotes.Modules.Identity.Presentation\GeekNotes.Modules.Identity.Presentation.csproj" />
     <ProjectReference Include="..\..\Modules\Users\GeekNotes.Modules.Users.Application\GeekNotes.Modules.Users.Application.csproj" />
     <ProjectReference Include="..\..\Modules\Users\GeekNotes.Modules.Users.Infrastructure\GeekNotes.Modules.Users.Infrastructure.csproj" />
     <ProjectReference Include="..\..\Modules\Users\GeekNotes.Modules.Users.Presentation\GeekNotes.Modules.Users.Presentation.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>

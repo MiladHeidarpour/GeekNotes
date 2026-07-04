@@ -7,7 +7,7 @@ namespace GeekNotes.Modules.Identity.Infrastructure;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection AddIdentityModule(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddIdentityInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddDbContext<IdentityContext>(options =>
         {

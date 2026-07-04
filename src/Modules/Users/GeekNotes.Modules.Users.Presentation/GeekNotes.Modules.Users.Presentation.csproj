@@ -13,6 +13,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\..\..\BuildingBlocks\GeekNotes.BuildingBlocks.Presentation\GeekNotes.BuildingBlocks.Presentation.csproj" />
 	  <ProjectReference Include="..\GeekNotes.Modules.Users.Application\GeekNotes.Modules.Users.Application.csproj" />
 	  <ProjectReference Include="..\GeekNotes.Modules.Users.Contracts\GeekNotes.Modules.Users.Contracts.csproj" />
 	</ItemGroup>
