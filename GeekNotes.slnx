@@ -20,6 +20,10 @@
     <Project Path="src/Modules/Identity/GeekNotes.Modules.Identity.Infrastructure/GeekNotes.Modules.Identity.Infrastructure.csproj" Id="95887f52-6ecf-46c5-971a-c4d2fe5be59d" />
     <Project Path="src/Modules/Identity/GeekNotes.Modules.Identity.Presentation/GeekNotes.Modules.Identity.Presentation.csproj" Id="efa58c26-60cb-4479-8316-fc9aa0081747" />
   </Folder>
+  <Folder Name="/src/Modules/IDP/">
+    <Project Path="src/Modules/IDP/GeekNotes.Modules.Idp.Domain/GeekNotes.Modules.Idp.Domain.csproj" Id="8a668f2f-4183-400e-9e84-cadc1ef94e2b" />
+    <Project Path="src/Modules/IDP/GeekNotes.Modules.Idp.Infrastructure/GeekNotes.Modules.Idp.Infrastructure.csproj" Id="dbedeca3-ad51-45ea-b78f-3f41c734f6a7" />
+  </Folder>
   <Folder Name="/src/Modules/Notify/" />
   <Folder Name="/src/Modules/Users/">
     <Project Path="src/Modules/Users/GeekNotes.Modules.Users.Application/GeekNotes.Modules.Users.Application.csproj" Id="81a8637e-9186-40e7-8167-e36e585d6510" />
