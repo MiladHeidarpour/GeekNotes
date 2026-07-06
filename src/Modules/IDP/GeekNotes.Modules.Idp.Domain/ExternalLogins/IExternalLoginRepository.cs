@@ -7,6 +7,7 @@ public interface IExternalLoginRepository
     Task<ExternalLogin?> GetAsync(ExternalProvider provider, string providerUserId, CancellationToken cancellationToken = default);
     Task<IReadOnlyList<ExternalLogin>> GetByUserIdAsync(Guid userId, CancellationToken cancellationToken = default);
     Task<bool> ExistsAsync(ExternalProvider provider, string providerUserId, CancellationToken cancellationToken = default);
-    void Update(ExternalLogin externalLogin);
-    void Remove(ExternalLogin externalLogin);
+    Task UpdateAsync(ExternalLogin externalLogin, CancellationToken cancellationToken = default);
+    Task RemoveAsync(ExternalLogin externalLogin, CancellationToken cancellationToken = default);
+    Task SaveChangesAsync(CancellationToken cancellationToken);
 }

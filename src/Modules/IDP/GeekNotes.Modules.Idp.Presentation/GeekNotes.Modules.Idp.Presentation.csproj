@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	  <OutputType>Library</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
+    <PackageReference Include="Mapster.DependencyInjection" Version="10.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\GeekNotes.BuildingBlocks.Presentation\GeekNotes.BuildingBlocks.Presentation.csproj" />
+    <ProjectReference Include="..\GeekNotes.Modules.Idp.Application\GeekNotes.Modules.Idp.Application.csproj" />
+    <ProjectReference Include="..\GeekNotes.Modules.Idp.Contracts\GeekNotes.Modules.Idp.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\BuildingBlocks.User.Abstractions\BuildingBlocks.User.Abstractions.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\GeekNotes.BuildingBlocks.Infrastructure\GeekNotes.BuildingBlocks.Infrastructure.csproj" />
     <ProjectReference Include="..\GeekNotes.Modules.Users.Application\GeekNotes.Modules.Users.Application.csproj" />
   </ItemGroup>
