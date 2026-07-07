@@ -8,6 +8,8 @@ public interface ICurrentUser
 
     Guid UserId { get; }
 
+    Guid SessionId { get; }
+
     string? Email { get; }
 
     IReadOnlyCollection<string> Roles { get; }

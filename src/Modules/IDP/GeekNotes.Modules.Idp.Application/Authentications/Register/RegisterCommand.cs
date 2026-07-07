@@ -1,7 +1,4 @@
-﻿using GeekNotes.BuildingBlocks.Application;
-using MediatR;
-
-namespace GeekNotes.Modules.Idp.Application.Authentications.Register;
+﻿namespace GeekNotes.Modules.Idp.Application.Authentications.Register;
 
 public sealed record RegisterCommand(
     string Email,

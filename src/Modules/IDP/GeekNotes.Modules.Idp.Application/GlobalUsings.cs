@@ -1,0 +1,10 @@
+﻿global using FluentValidation;
+global using GeekNotes.BuildingBlocks.Application;
+global using MediatR;
+global using Microsoft.Extensions.DependencyInjection;
+global using System.Reflection;
+global using BuildingBlocks.User.Abstractions;
+global using GeekNotes.Modules.Idp.Domain;
+global using GeekNotes.Modules.Idp.Domain.Credentials;
+global using GeekNotes.Modules.Idp.Domain.Sessions;
+global using GeekNotes.Modules.Idp.Domain.Verifications;

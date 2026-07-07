@@ -20,6 +20,7 @@ public sealed class JwtTokenGenerator : IJwtTokenGenerator
 
     public string GenerateAccessToken(
         Guid userId,
+        Guid sessionId,
         string email,
         IEnumerable<string> roles,
         IEnumerable<string> permissions)
@@ -27,6 +28,7 @@ public sealed class JwtTokenGenerator : IJwtTokenGenerator
         var claims = new List<Claim>
         {
             new(JwtRegisteredClaimNames.Sub, userId.ToString()),
+            new(JwtRegisteredClaimNames.Sid, sessionId.ToString()),
             new(JwtRegisteredClaimNames.Email, email),
             new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
         };

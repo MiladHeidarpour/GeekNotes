@@ -1,30 +1,10 @@
-﻿using GeekNotes.BuildingBlocks.Application;
-using GeekNotes.Modules.Idp.Domain;
-using GeekNotes.Modules.Idp.Domain.Credentials;
-using GeekNotes.Modules.Idp.Domain.Sessions;
-using MediatR;
-
-namespace GeekNotes.Modules.Idp.Application.Authentications.Login;
-
-//public sealed class LoginCommandValidator
-//    : AbstractValidator<LoginCommand>
-//{
-//    public LoginCommandValidator()
-//    {
-//        RuleFor(x => x.Email)
-//            .NotEmpty()
-//            .EmailAddress();
-
-//        RuleFor(x => x.Password)
-//            .NotEmpty();
-//    }
-//}
+﻿namespace GeekNotes.Modules.Idp.Application.Authentications.Login;
 
 internal sealed class LoginCommandHandler
-    : IRequestHandler<LoginCommand,
-        OperationResult<LoginCommandResponse>>
+    : IRequestHandler<LoginCommand, OperationResult<LoginCommandResponse>>
 {
     private readonly ICredentialRepository _credentialRepository;
+    private readonly IUserService _userService;
     private readonly IPasswordHasher _passwordHasher;
     private readonly IJwtTokenGenerator _jwtTokenGenerator;
     private readonly IRefreshTokenGenerator _refreshTokenGenerator;
@@ -32,12 +12,14 @@ internal sealed class LoginCommandHandler
 
     public LoginCommandHandler(
         ICredentialRepository credentialRepository,
+        IUserService userService,
         IPasswordHasher passwordHasher,
         IJwtTokenGenerator jwtTokenGenerator,
         IRefreshTokenGenerator refreshTokenGenerator,
         ISessionRepository sessionRepository)
     {
         _credentialRepository = credentialRepository;
+        _userService = userService;
         _passwordHasher = passwordHasher;
         _jwtTokenGenerator = jwtTokenGenerator;
         _refreshTokenGenerator = refreshTokenGenerator;
@@ -48,10 +30,14 @@ internal sealed class LoginCommandHandler
         LoginCommand request,
         CancellationToken cancellationToken)
     {
-        // TODO
-        // IUserService.GetByEmail()
-        var userIdguid = Guid.Parse("b55e04ac-d17d-452a-a605-b2625a8386c2");
-        Guid userId = userIdguid;
+        var user = _userService.GetByEmailAsync(request.Email, cancellationToken);
+
+        if (user is null)
+        {
+            return OperationResult<LoginCommandResponse>
+                .NotFound("NotFound User!");
+        }
+        var userId = Guid.Parse(user.Id.ToString());
 
         var credential = await _credentialRepository.GetByUserIdAsync(
             userId,
@@ -95,12 +81,6 @@ internal sealed class LoginCommandHandler
                 _passwordHasher.Hash(request.Password));
         }
 
-        var accessToken = _jwtTokenGenerator.GenerateAccessToken(
-            userId,
-            request.Email,
-            [],
-            []);
-
         var refreshToken =
             _refreshTokenGenerator.Generate();
 
@@ -117,6 +97,14 @@ internal sealed class LoginCommandHandler
             cancellationToken);
 
         await _sessionRepository.SaveChangesAsync(cancellationToken);
+
+        var accessToken = _jwtTokenGenerator.GenerateAccessToken(
+            userId,
+            session.Id.Value,
+            request.Email,
+            user.Result.Roles,
+            []);
+
 
         return OperationResult<LoginCommandResponse>.Success(
             new LoginCommandResponse(

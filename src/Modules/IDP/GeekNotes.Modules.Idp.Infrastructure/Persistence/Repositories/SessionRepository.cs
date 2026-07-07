@@ -33,7 +33,7 @@ internal sealed class SessionRepository
                 cancellationToken);
     }
 
-    public async Task<Session?> GetByRefreshTokenAsync(
+    public async Task<Session?> GetByRefreshTokenHashAsync(
         RefreshTokenHash refreshTokenHash,
         CancellationToken cancellationToken = default)
     {
@@ -75,5 +75,32 @@ internal sealed class SessionRepository
     public async Task SaveChangesAsync(CancellationToken cancellationToken)
     {
         await _context.SaveChangesAsync(cancellationToken);
+    }
+
+    public async Task<IReadOnlyList<Session>> GetByUserIdAsync(Guid userId, CancellationToken cancellationToken)
+    {
+        return await _context.Sessions
+            .Where(x =>
+                x.UserId == userId)
+            .ToListAsync(cancellationToken);
+    }
+
+    public async Task RevokeAllAsync(Guid userId, CancellationToken cancellationToken)
+    {
+        var sessions = await _context.Sessions
+            .Where(x =>
+                x.UserId == userId)
+            .ToListAsync(cancellationToken);
+
+        foreach (var session in sessions)
+        {
+            session.Revoke();
+        }
+    }
+
+    public async Task<bool> ExistsAsync(SessionId sessionId, CancellationToken cancellationToken)
+    {
+        return await _context.Sessions
+            .AnyAsync(x => x.Id == sessionId);
     }
 }

@@ -35,6 +35,17 @@ public sealed class CurrentUser : ICurrentUser
         }
     }
 
+    public Guid SessionId
+    {
+        get
+        {
+            var value = User.FindFirstValue("sid");
+
+            return Guid.TryParse(value, out var id)
+                ? id
+                : Guid.Empty;
+        }
+    }
     public string? Email =>
         User.FindFirstValue(ClaimTypes.Email);
 

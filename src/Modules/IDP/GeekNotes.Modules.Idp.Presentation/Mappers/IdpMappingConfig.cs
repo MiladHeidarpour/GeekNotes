@@ -1,6 +1,7 @@
 ﻿using GeekNotes.Modules.Idp.Application.Authentications.Login;
 using GeekNotes.Modules.Idp.Application.Authentications.Register;
-using GeekNotes.Modules.Idp.Contracts.Requests;
+using GeekNotes.Modules.Idp.Contracts.Login;
+using GeekNotes.Modules.Idp.Contracts.Register;
 using Mapster;
 
 namespace GeekNotes.Modules.Idp.Presentation.Mappers;

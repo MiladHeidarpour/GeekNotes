@@ -69,6 +69,9 @@ public sealed class Session : AggregateRoot<SessionId>
 
     public void Revoke()
     {
+        if (RevokedOnUtc is not null)
+            return;
+
         RevokedOnUtc = DateTime.UtcNow;
     }
 

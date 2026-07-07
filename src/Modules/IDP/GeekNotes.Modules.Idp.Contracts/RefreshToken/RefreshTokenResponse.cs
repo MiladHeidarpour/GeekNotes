@@ -1,0 +1,6 @@
+﻿namespace GeekNotes.Modules.Idp.Contracts.RefreshToken;
+
+public sealed record RefreshTokenResponse(
+    string AccessToken,
+    string RefreshToken,
+    DateTime ExpiresOnUtc);

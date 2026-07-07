@@ -1,34 +1,4 @@
-﻿using GeekNotes.BuildingBlocks.Application;
-using GeekNotes.Modules.Idp.Domain;
-using GeekNotes.Modules.Idp.Domain.Credentials;
-using GeekNotes.Modules.Idp.Domain.Verifications;
-using MediatR;
-
-namespace GeekNotes.Modules.Idp.Application.Authentications.Register;
-
-//public sealed class RegisterCommandValidator
-//    : AbstractValidator<RegisterCommand>
-//{
-//    public RegisterCommandValidator()
-//    {
-//        RuleFor(x => x.Email)
-//            .NotEmpty()
-//            .EmailAddress();
-
-//        RuleFor(x => x.Password)
-//            .NotEmpty()
-//            .MinimumLength(8)
-//            .MaximumLength(100);
-
-//        RuleFor(x => x.FirstName)
-//            .NotEmpty()
-//            .MaximumLength(100);
-
-//        RuleFor(x => x.LastName)
-//            .NotEmpty()
-//            .MaximumLength(100);
-//    }
-//}
+﻿namespace GeekNotes.Modules.Idp.Application.Authentications.Register;
 
 internal sealed class RegisterCommandHandler
     : IRequestHandler<

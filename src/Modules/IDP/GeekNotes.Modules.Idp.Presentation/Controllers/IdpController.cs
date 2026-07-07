@@ -4,13 +4,20 @@ using GeekNotes.Modules.Idp.Application.Authentications.Logout;
 using GeekNotes.Modules.Idp.Application.Authentications.Me;
 using GeekNotes.Modules.Idp.Application.Authentications.RefreshToken;
 using GeekNotes.Modules.Idp.Application.Authentications.Register;
-using GeekNotes.Modules.Idp.Contracts.Requests;
+using GeekNotes.Modules.Idp.Application.Authentications.Sessions.RevokeAllSessions;
+using GeekNotes.Modules.Idp.Application.Authentications.Sessions.RevokeSession;
+using GeekNotes.Modules.Idp.Contracts.Login;
+using GeekNotes.Modules.Idp.Contracts.Logout;
+using GeekNotes.Modules.Idp.Contracts.Me;
+using GeekNotes.Modules.Idp.Contracts.RefreshToken;
+using GeekNotes.Modules.Idp.Contracts.Register;
+using GeekNotes.Modules.Idp.Contracts.RevokeAllSessions;
+using GeekNotes.Modules.Idp.Contracts.RevokeSession;
 using GeekNotes.Modules.Users.Presentation;
 using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
 
 namespace GeekNotes.Modules.Idp.Presentation.Controllers;
 
@@ -39,7 +46,7 @@ public class IdpController : ApiController
     {
         var command = _mapper.Map<LoginCommand>(request);
         var response = await _mediator.Send(command, cancellationToken);
-        return HandleMappedResult(response, _mapper.Map<LoginCommandResponse>);
+        return HandleMappedResult(response, _mapper.Map<LoginResponse>);
     }
 
     [HttpPost("refresh")]
@@ -49,7 +56,7 @@ public class IdpController : ApiController
     {
         var command = _mapper.Map<RefreshTokenCommand>(request);
         var response = await _mediator.Send(command, cancellationToken);
-        return HandleMappedResult(response, _mapper.Map<RefreshTokenCommandResponse>);
+        return HandleMappedResult(response, _mapper.Map<RefreshTokenResponse>);
     }
 
     [HttpPost("logout")]
@@ -59,7 +66,7 @@ public class IdpController : ApiController
     {
         var command = _mapper.Map<LogoutCommand>(request);
         var response = await _mediator.Send(command, cancellationToken);
-        return HandleMappedResult(response, _mapper.Map<LogoutCommandResponse>);
+        return HandleMappedResult(response, _mapper.Map<LogoutResponse>);
     }
 
     [Authorize]
@@ -68,6 +75,24 @@ public class IdpController : ApiController
     {
         var response = await _mediator.Send(new MeQuery(), cancellationToken);
         return HandleMappedResult(response, _mapper.Map<MeResponse>);
+    }
+
+    [HttpDelete("sessions/{sessionId:guid}")]
+    public async Task<IActionResult> RevokeSession(
+    RevokeSessionRequest request,
+    CancellationToken cancellationToken)
+    {
+        var command = _mapper.Map<RevokeSessionCommand>(request);
+        var response = await _mediator.Send(command, cancellationToken);
+        return HandleMappedResult(response, _mapper.Map<RevokeSessionResponse>);
+    }
+
+    [HttpDelete("sessions")]
+    public async Task<IActionResult> RevokeAllSessions(
+    CancellationToken cancellationToken)
+    {
+        var response = await _mediator.Send(new RevokeAllSessionsCommand(), cancellationToken);
+        return HandleMappedResult(response, _mapper.Map<RevokeAllSessionsResponse>);
     }
 
     //[HttpGet("github/login")]
